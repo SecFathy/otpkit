@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "otpkit"
+version = "1.0.0"
+description = "MCP server for temporary email and SMS — receive OTPs and verification links without API keys"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+keywords = ["mcp", "otpkit", "temp-email", "temp-sms", "otp", "disposable-email", "verification"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Communications :: Email",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Repository = "https://github.com/secfathy/otpkit"
+
+[project.scripts]
+otpkit = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
