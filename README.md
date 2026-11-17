@@ -96,6 +96,16 @@ Paid providers give you a **private** temporary number that only you can read. S
 
 ## Installation
 
+### No install needed (recommended)
+
+Use `uvx` to run directly from the repo — nothing to install:
+
+```bash
+uvx otpkit
+```
+
+> `uvx` fetches and runs the package in an isolated environment. If you don't have `uv`, install it: `pip install uv`
+
 ### From GitHub
 
 ```bash
@@ -123,7 +133,13 @@ otpkit
 
 ### Claude Code (CLI)
 
-One command — no config file needed:
+**Quickest — install and register in one command (no clone needed):**
+
+```bash
+claude mcp add otpkit -- uvx otpkit
+```
+
+Or if you installed via pip:
 
 ```bash
 claude mcp add otpkit -- otpkit
@@ -156,7 +172,8 @@ Claude will call `create_temp_email`, `wait_for_email`, and return the OTP autom
 {
   "mcpServers": {
     "otpkit": {
-      "command": "otpkit"
+      "command": "uvx",
+      "args": ["otpkit"]
     }
   }
 }
@@ -172,7 +189,8 @@ The otpkit tools now appear in Claude's tool list (hammer icon).
 {
   "mcpServers": {
     "otpkit": {
-      "command": "otpkit",
+      "command": "uvx",
+      "args": ["otpkit"],
       "env": {
         "FIVESIM_API_KEY": "your-key-here",
         "SMSPOOL_API_KEY": "your-key-here"
@@ -190,7 +208,8 @@ Add to `.cursor/mcp.json` in your project root (or global `~/.cursor/mcp.json`):
 {
   "mcpServers": {
     "otpkit": {
-      "command": "otpkit"
+      "command": "uvx",
+      "args": ["otpkit"]
     }
   }
 }
@@ -206,7 +225,8 @@ Add to `~/.codeium/windsurf/mcp_config.json`:
 {
   "mcpServers": {
     "otpkit": {
-      "command": "otpkit"
+      "command": "uvx",
+      "args": ["otpkit"]
     }
   }
 }
@@ -222,7 +242,8 @@ Add to `~/.codeium/windsurf/mcp_config.json`:
 {
   "mcpServers": {
     "otpkit": {
-      "command": "otpkit"
+      "command": "uvx",
+      "args": ["otpkit"]
     }
   }
 }
